@@ -1,0 +1,25 @@
+prepare-commit-msg:
+  commands:
+    verify_cz:
+      run: if ! command -v cz &> /dev/null; then npm install -g commitizen; fi
+
+commit-msg:
+  parallel: false
+  commands:
+    commitlint:
+      run: if ! command -v commitlint &> /dev/null; then npm install -g @commitlint/{config-conventional,cli}; fi && commitlint --edit {1}
+
+pre-push:
+  commands:
+    gems-audit:
+      tags: backend security
+      run: bundle audit
+
+pre-commit:
+  parallel: true
+  commands:
+    rubocop:
+      tags: backend style
+      glob: "*.rb"
+      exclude: "application.rb|routes.rb"
+      run: bundle exec rubocop --force-exclusion {staged_files}

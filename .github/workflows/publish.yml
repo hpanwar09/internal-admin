@@ -1,0 +1,16 @@
+name: Publish
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    runs-on: "ubuntu-22.04"
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build and publish gem
+      uses: g2crowd/gh-actions/actions/publish-gem@v1.0.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
