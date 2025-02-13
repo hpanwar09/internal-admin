@@ -4,7 +4,7 @@ gemspec
 gem 'bundler-audit', '~> 0.9.1'
 gem 'rake', '~> 13.0'
 gem 'rspec', '~> 3.4'
-gem 'rspec-github', '~> 2.4'
+gem 'rspec-github', '~> 3.0'
 gem 'rubocop', '1.71.2'
 gem 'rubocop-packaging', '0.5.2'
 gem 'rubocop-performance', '1.23.1'
