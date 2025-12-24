@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 gemspec
 
+ruby '3.2.4'
+
 gem 'bundler-audit', '~> 0.9.1'
 gem 'rake', '~> 13.0'
 gem 'rspec', '~> 3.4'
