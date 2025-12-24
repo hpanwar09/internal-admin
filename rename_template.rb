@@ -15,7 +15,7 @@ def main # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   author_email = ask('Author email?', default: git_meta[:user_email])
   author_name = ask('Author name?', default: git_meta[:user_name])
   github_repo = ask('GitHub repository?', default: git_meta[:origin_repo_path])
-  exe = ask_yes_or_no('Include an executable (CLI) in this gem?', default: 'N')
+  exe = ask_yes_or_no?('Include an executable (CLI) in this gem?', default: 'N')
 
   FileUtils.mkdir_p "lib/#{as_path(gem_name)}"
   FileUtils.mkdir_p "spec/#{as_path(gem_name)}"
@@ -149,7 +149,7 @@ def ask(question, default: nil, echo: true)
   answer.to_s.strip.empty? ? default : answer
 end
 
-def ask_yes_or_no(question, default: 'N')
+def ask_yes_or_no?(question, default: 'N')
   default = default == 'Y' ? 'Y/n' : 'y/N'
   answer = ask(question, default: default)
 
