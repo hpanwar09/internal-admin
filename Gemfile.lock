@@ -32,7 +32,7 @@ GEM
     rspec-expectations (3.13.5)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
-    rspec-github (2.4.0)
+    rspec-github (3.0.0)
       rspec-core (~> 3.0)
     rspec-mocks (3.13.7)
       diff-lcs (>= 1.2.0, < 2.0)
@@ -80,7 +80,7 @@ DEPENDENCIES
   example!
   rake (~> 13.0)
   rspec (~> 3.4)
-  rspec-github (~> 2.4)
+  rspec-github (~> 3.0)
   rubocop (= 1.82.1)
   rubocop-packaging (= 0.6.0)
   rubocop-performance (= 1.26.1)
